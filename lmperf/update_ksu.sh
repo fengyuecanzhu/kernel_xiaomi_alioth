@@ -11,5 +11,5 @@ git pull
 cp -r ${KERNEL_ROOTDIR}/KernelSU/kernel/* ${KERNEL_ROOTDIR}/drivers/kernelsu/
 
 git commit -m "ksu: Update to latest version."
-git push
+#git push
 

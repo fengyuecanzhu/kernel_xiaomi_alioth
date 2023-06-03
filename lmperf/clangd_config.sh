@@ -15,7 +15,7 @@ make LLVM=1 LLVM_IAS=1 O=${KERNEL_OUTDIR} ARCH=${ARCH} SUBARCH=${SUBARCH} CC=cla
 
 echo "Generate compile_commands.json with build..."
 cd ${KERNEL_OUTDIR}
-bear -- make -j$(nproc) LLVM=1 LLVM_IAS=1 O=${KERNEL_OUTDIR} ARCH=${ARCH} SUBARCH=${SUBARCH} CC=clang LD=ld.lld CLANG_TRIPLE=aarch64-linux-gnu- CROSS_COMPILE=aarch64-linux-gnu- CROSS_COMPILE_ARM32=arm-linux-gnueabi- KBUILD_BUILD_USER=${KBUILD_BUILD_USER} KBUILD_BUILD_HOST=${KBUILD_BUILD_HOST}
+bear make -j$(nproc) LLVM=1 LLVM_IAS=1 O=${KERNEL_OUTDIR} ARCH=${ARCH} SUBARCH=${SUBARCH} CC=clang LD=ld.lld CLANG_TRIPLE=aarch64-linux-gnu- CROSS_COMPILE=aarch64-linux-gnu- CROSS_COMPILE_ARM32=arm-linux-gnueabi- KBUILD_BUILD_USER=${KBUILD_BUILD_USER} KBUILD_BUILD_HOST=${KBUILD_BUILD_HOST}
 
 echo "Saving..."
 mv ${KERNEL_OUTDIR}/compile_commands.json ${KERNEL_ROOTDIR}/
